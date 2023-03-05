@@ -1,0 +1,164 @@
+.header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 100;
+
+  @media (max-width: 672px) {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+
+    @media (max-width: 672px) {
+      padding-top: 0px;
+    }
+  }
+
+
+
+  &__btns {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    padding: 17px 45px;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 18px;
+
+    @include small-tablet {
+      padding: 13px 25px;
+      margin-top: 0px;
+    }
+
+    @media (max-width:672px) {
+      padding: 10px 18px;
+      margin-right: 10px;
+    }
+  }
+
+}
+
+.nav {
+  @media (max-width: 672px) {
+    position: fixed;
+    top: -2000px;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    z-index: 100;
+
+    &.active {
+
+      opacity: 1;
+      background-color: var(--niagara);
+
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 410px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 53px;
+
+    @media (max-width: 878px) {
+      gap: 20px;
+    }
+
+    @media (max-width: 725px) {
+      gap: 10px;
+    }
+
+
+    @media (max-width: 672px) {
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+  }
+
+  &__item {
+    position: relative;
+
+    @media (max-width: 672px) {
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.52);
+        width: 162px;
+      }
+    }
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 80px;
+    color: var(--light);
+
+    &:hover {
+      color: var(--niagara);
+
+      @media (max-width: 672px) {
+        color: var(--light);
+      }
+    }
+
+    @include small-tablet {
+      font-size: 16px;
+    }
+
+    @media (max-width: 672px) {
+      line-height: 40px;
+
+
+    }
+
+
+  }
+}
+
+.mobile-menu-open {
+  display: none;
+
+  @media (max-width: 672px) {
+    display: block;
+    margin-top: 5px;
+    position: relative;
+    z-index: 150;
+
+  }
+}
+
+.mobile-menu-close {
+  display: none;
+}
+
+
+.mobile-menu-open.active {
+  display: none;
+}
+
+.mobile-menu-close.active {
+  display: block;
+  margin-top: 5px;
+  z-index: 150;
+}

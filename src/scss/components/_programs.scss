@@ -1,0 +1,262 @@
+.programs {
+  padding-top: 90px;
+  padding-bottom: 100px;
+
+  &__title {
+    padding-bottom: 20px;
+
+  }
+
+  &__accordion {
+    padding-bottom: 30px;
+    font-size: 18px;
+  }
+
+  &__btn {
+    padding: 22px 28px;
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+}
+
+.accordion {
+
+  &__item {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 20px;
+
+    @media (max-width: 850px) {
+      padding: 20px;
+    }
+
+    @include mobile {
+      padding: 10px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    @media (max-width: 850px) {
+      padding-left: 0px;
+    }
+
+    @media (max-width: 675px) {
+      flex-direction: column;
+
+      justify-content: center;
+
+
+    }
+
+
+    &.active {
+      padding-bottom: 30px;
+
+      & .accordion__btn {
+        @include mobile {
+          top: 85%;
+        }
+      }
+
+      & .accordion__btn::after {
+        transform: rotate(-45deg)
+      }
+
+      & .accordion__btn::before {
+        transform: rotate(45deg)
+      }
+    }
+
+
+  }
+
+  &__btn {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: -5px;
+    background: #2A79C2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    @include mobile {
+      width: 24px;
+      height: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 100%;
+    }
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 20;
+      left: 19%;
+      top: 49%;
+      transform: rotate(45deg);
+      width: 15px;
+      height: 2px;
+      background-color: var(--light);
+      transition: all 0.3s ease 0s;
+
+      @include mobile {
+        width: 9px;
+        left: 21%;
+      }
+
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 20%;
+      top: 49%;
+      transform: rotate(-45deg);
+      width: 15px;
+      height: 2px;
+      background-color: var(--light);
+      transition: all 0.3s ease 0s;
+
+      @include mobile {
+        width: 9px;
+        right: 18%;
+      }
+
+    }
+  }
+
+  &__main {
+    text-align: center;
+    max-width: 400px;
+
+    @include small-tablet {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @media (max-width: 675px) {
+      order: 3;
+      font-size: 12px;
+      line-height: 19px;
+    }
+
+    @include mobile {
+      max-width: 241px;
+    }
+  }
+
+  &__accent {
+    font-weight: 700;
+    color: #2A79C2;
+    padding-right: 20px;
+
+    @include small-tablet {
+      font-size: 16px;
+      padding-right: 60px;
+    }
+
+    @media (max-width: 675px) {
+      font-size: 12px;
+      line-height: 20px;
+      padding: 0;
+
+
+    }
+
+
+  }
+
+  &__timeline {
+    padding-top: 4px;
+    padding-right: 0px;
+    padding-left: 20px;
+    font-weight: 400 !important;
+    font-size: 16px;
+    color: var(--black) !important;
+    display: none;
+
+    @include small-tablet {
+      display: inline-block;
+      padding-left: 40px;
+    }
+
+    @media (max-width: 675px) {
+      font-size: 12px;
+      line-height: 20px;
+      padding: 0;
+
+    }
+
+  }
+
+  &__body {
+    opacity: 0;
+    padding: 0;
+    height: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease 0s;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+
+      & .accordion__body-item:not(:last-child) {
+        padding: 25px 0;
+
+        @include mobile {
+          padding: 10px 0;
+        }
+      }
+
+      & .accordion__body-item:last-child {
+        padding-top: 25px;
+
+        @include mobile {
+          padding-top: 10px;
+        }
+      }
+
+      height: auto;
+    }
+  }
+
+  &__body-item {
+    margin-left: 20px;
+    border-top: 1px solid #E9E9E9;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    color: #555555;
+
+    @include small-tablet {
+      font-size: 14px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
+
+    & a {
+      text-decoration: none;
+      color: #2A79C2;
+    }
+
+
+  }
+}

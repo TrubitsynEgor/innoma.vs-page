@@ -1,0 +1,123 @@
+.hero {
+  position: relative;
+  padding: 250px 0 328px;
+  background: url('../img/hero_bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include mobile {
+    padding: 154px 0 155px;
+
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: url('../img/hero_overlay.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 5;
+    max-width: 769px;
+
+    @include small-tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 43px;
+    line-height: 60px;
+    text-transform: uppercase;
+    color: var(--light);
+
+    & span {
+      padding-left: 10px;
+      margin-left: -10px;
+      display: inline-block;
+      background-color: var(--niagara);
+    }
+
+    @media (max-width: 800px) {
+      font-size: 36px;
+      text-align: center;
+    }
+
+    @media (max-width: 672px) {
+      font-size: 24px;
+      line-height: 40px;
+      padding-bottom: 32px;
+
+      & span {
+        padding: 6px;
+        margin-left: 0px;
+        display: inline;
+      }
+    }
+
+
+  }
+
+  &__descr {
+    display: block;
+    font-size: 34px;
+    line-height: 80px;
+    color: var(--light);
+    padding-bottom: 40px;
+
+    @include small-tablet {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+      font-size: 18px;
+      line-height: 40px;
+      color: var(--light);
+      max-width: 246px;
+      padding-bottom: 32px;
+
+      & span {
+        padding: 3px;
+        border-radius: 3px;
+        background-color: var(--light);
+        color: var(--niagara);
+
+      }
+
+      @include small-tablet {
+        display: inline-block;
+      }
+
+      @include mobile {
+        text-align: center;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 28px 31px;
+
+    @include small-tablet {
+      padding: 23px 37px;
+    }
+
+    @include mobile {
+      padding: 16px 37px;
+    }
+
+  }
+}

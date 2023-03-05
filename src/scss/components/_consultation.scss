@@ -1,0 +1,116 @@
+.consultation {
+  padding-top: 128px;
+  padding-bottom: 174px;
+  background: url('../img/consultation_bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  @include mobile {
+    padding-top: 95px;
+    padding-bottom: 97px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: url('../img/consultation_overlay.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+  &__container {
+    max-width: 1423px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include small-tablet {
+      max-width: 596px;
+    }
+
+
+    @media (max-width: 375px) {
+      max-width: 344px;
+    }
+
+
+
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    background-color: var(--niagara);
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--light);
+
+    @include small-tablet {
+      background-color: transparent;
+      font-size: 36px;
+
+      padding-bottom: 15px;
+
+      & span {
+        padding: 8px 8px;
+        background-color: var(--niagara);
+      }
+    }
+
+    @include mobile {
+      font-size: 24px;
+      line-height: 35px;
+    }
+  }
+
+  &__caption {
+    padding-bottom: 20px;
+
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 60px;
+    text-align: center;
+    color: var(--light);
+
+    @include small-tablet {
+      font-size: 16px;
+      line-height: 30px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__btn {
+    padding: 27px 38px;
+
+    @include small-tablet {
+      font-size: 18px;
+      padding: 24px 36px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+      padding: 18px 27px;
+    }
+  }
+}

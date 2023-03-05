@@ -1,0 +1,6 @@
+import './components/burger'
+import './components/tabs'
+import './components/video'
+import './components/accordion'
+import './components/swiper'
+import './components/form'

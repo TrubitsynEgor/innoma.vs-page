@@ -1,0 +1,32 @@
+//* components basic
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+
+//* components main
+@import "./components/header";
+@import "./components/hero";
+@import "./components/services";
+@import "./components/submission";
+@import "./components/consultation";
+@import "./components/work";
+@import "./components/about";
+@import "./components/programs";
+@import "./components/entry";
+@import "./components/result";
+@import "./components/price";
+@import "./components/who-we";
+@import "./components/experts";
+@import "./components/partners";
+@import "./components/offer";
+@import "./components/events";
+@import "./components/questions";
+@import "./components/modal";
+
+
+@import "./components/footer";
+
+
+//* components reused

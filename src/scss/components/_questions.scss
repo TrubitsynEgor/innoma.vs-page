@@ -1,0 +1,292 @@
+.questions {
+  padding-bottom: 100px;
+  margin-bottom: 20px;
+  background: url('../img/questions_bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 1100px) {
+      justify-content: center;
+    }
+
+  }
+
+  &__left {
+    max-width: 466px;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  &__head {
+    padding-bottom: 74px;
+
+    @include mobile {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 76px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 60px;
+    color: var(--light);
+
+    @media (max-width: 1100px) {
+      text-align: center;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__caption {
+    display: block;
+    margin: 0;
+    font-size: 18px;
+    line-height: 40px;
+    color: var(--light);
+
+    @media (max-width: 1100px) {
+      text-align: center;
+    }
+
+    @include mobile {
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 28px;
+      max-width: 230px;
+    }
+  }
+
+  &__social {}
+
+  &__social-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 60px;
+    color: var(--light);
+
+    @media (max-width: 1100px) {
+      text-align: center;
+    }
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__social-btns {
+    display: flex;
+    gap: 50px;
+
+
+
+    @media (max-width: 1100px) {
+      justify-content: center;
+
+    }
+
+    @media (max-width: 340px) {
+      gap: 20px;
+    }
+
+
+    & a {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+
+
+      @include mobile {
+        flex-direction: column;
+
+      }
+    }
+
+    & span {
+      display: block;
+      font-size: 20px;
+      color: #FFFFFF;
+
+      &:hover {
+        color: rgba(#ffffff, 0.5);
+      }
+    }
+
+
+
+    & img {
+      display: block;
+      width: 60px;
+      height: 60px;
+
+
+    }
+  }
+
+}
+
+.form {
+  margin-top: 76px;
+  padding-bottom: 100px;
+  max-width: 600px;
+  height: 340px;
+  padding: 25px 43px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: var(--light);
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 620px) {
+    padding: 10px 20px;
+    max-width: 320px;
+    height: 280px;
+  }
+
+  @include mobile {
+    margin-top: 36px;
+  }
+
+  @media (max-width: 340px) {
+    max-width: 280px;
+  }
+
+
+  &__label {
+    position: relative;
+  }
+
+  &__input {
+    padding: 20px;
+    width: 513px;
+    border-bottom: 1px solid #E4E4E4;
+    font-weight: 400;
+    font-size: 16px;
+    color: #707070;
+
+    @media (max-width: 620px) {
+      padding: 20px;
+      width: 280px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 340px) {
+      width: 260px;
+      padding-right: 0px;
+
+    }
+
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      color: rgba(#707070, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid #827f7f;
+    }
+  }
+
+  &__btn {
+    margin-top: 30px;
+    width: 246px;
+    height: 70px;
+    font-size: 18px;
+
+    @media (max-width: 620px) {
+      margin: 0 auto;
+      width: 290px;
+      height: 55px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 340px) {
+      width: 240px;
+    }
+  }
+}
+
+.input-phone {
+  padding-left: 30px;
+
+}
+
+.arrow {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease 0s;
+
+  &.active {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+
+}
+
+.flag {
+  position: absolute;
+  left: 70px;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+
+
+.phone-list {
+  position: absolute;
+  z-index: 10;
+  left: 20px;
+  top: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease 0s;
+  background-color: var(--light);
+  padding: 10px 35px 10px 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.phone-item {
+  position: relative;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  border-bottom: 1px solid rgba(#707070, 0.5);
+
+  & button {
+    font-size: 16px;
+    color: #707070;
+  }
+
+  & button:hover {
+    color: var(--denim);
+  }
+}
+
+.flag-inner {
+  position: absolute;
+  right: -20px;
+  top: 30%;
+  transform: translateY(-50%);
+}
